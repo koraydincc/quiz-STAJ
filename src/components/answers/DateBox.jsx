@@ -3,8 +3,11 @@ import { DemoContainer } from '@mui/x-date-pickers/internals/demo'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker'
+import { useState } from 'react'
+import dayjs from 'dayjs'
 
 export default function DatePickerCustom({ text, setQuestions, answerAndQuestion, props }) {
+   
 
 
   console.log(answerAndQuestion)
@@ -23,8 +26,9 @@ export default function DatePickerCustom({ text, setQuestions, answerAndQuestion
         >
           <DatePicker
             onChange={(e) => {
-              
+             
               let date = e.format('MM-DD-YYYY')
+            
               setQuestions((prev) => ({
                 ...prev,
                 [text]: {
@@ -37,7 +41,7 @@ export default function DatePickerCustom({ text, setQuestions, answerAndQuestion
               width: '100%',
             }}
             label={text}
-            defaultValue={props?.answerAndQuestion?.answer}
+            defaultValue={dayjs(answerAndQuestion?.answer)}
           
           />
         </DemoContainer>
