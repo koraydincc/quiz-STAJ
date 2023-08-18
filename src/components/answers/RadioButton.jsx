@@ -13,6 +13,9 @@ import FormLabel from '@mui/material/FormLabel'
 
 // questions['Do you have allergies?']
 export default function RadioButtonsGroup(props) {
+
+
+  console.log(props.answerAndQuestion, 'radddadsadasdsadsadasd')
   return (
     <FormControl>
       <FormLabel id="demo-radio-buttons-group-label">
@@ -36,11 +39,14 @@ export default function RadioButtonsGroup(props) {
           value="Yes"
           control={<Radio size="small" />}
           label="Yes"
+          checked={props?.answerAndQuestion?.answer == 'Yes'? true : false  }
         />
         <FormControlLabel
           value="No"
           control={<Radio size="small" />}
           label="No"
+          checked={props?.answerAndQuestion?.answer == 'No'? true : false  }
+
         />
       </RadioGroup>
       

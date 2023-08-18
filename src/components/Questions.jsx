@@ -2,6 +2,7 @@ import { Button } from '@mui/material'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Table from './Items/Table'
+import SaveAnswer from './Items/SaveAnswer'
 
 export default function Questions({ data }) {
   return (
@@ -16,6 +17,7 @@ export default function Questions({ data }) {
           }}
         >
           <Table data={data} />
+         
           {/* <ul>
               {data.map((dataItem, dataIndex) => (
                   <li key={dataIndex}>
