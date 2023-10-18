@@ -11,6 +11,7 @@ import { Typography } from '@mui/material'
 import CustomTextField from '../components/answers/TextField'
 import DatePickerCustom from '../components/answers/DateBox'
 import SaveAnswer from '../components/answers/SaveAnswer'
+import Answers from './Answers'
 
 export default function Cevaplar() {
   let { id } = useParams()
@@ -174,6 +175,7 @@ export default function Cevaplar() {
             Anket No: {selectedAnket?.resource?.id}
          
           </Typography>
+         
           {selectedAnket?.resource?.item?.map((resourceItem, resourceIndex) =>
             renderQuestionItem(resourceItem, resourceIndex)
           )}

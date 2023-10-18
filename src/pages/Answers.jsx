@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Client from 'fhir-kit-client'
 import axios from 'axios'
-import { Typography } from '@mui/material'
+import { List, Typography } from '@mui/material'
 
 function Answers() {
 
@@ -12,8 +12,8 @@ function Answers() {
   const fetchAnswer = async () => {
     try {
            const response = await axios.get('https://hapi.fhir.org/baseR4/QuestionnaireResponse')
-           setAnswerData(response?.entry)
-           console.log('Koray')
+           setAnswerData(response?.data)
+           
 
     } 
     catch (error) {
@@ -33,7 +33,11 @@ function Answers() {
   return (
     <div>
       <div>
-        <Typography>Person Answering</Typography>
+        {answerData?.resource?.map((answer,id)=>{
+          <Typography>Person Answering</Typography>
+          
+        })}
+        
       </div>
     </div>
   )
